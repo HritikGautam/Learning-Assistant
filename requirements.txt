@@ -8,3 +8,5 @@ streamlit
 sentence-transformers
 langchain-huggingface
 groq
+langchain-community
+langchain
