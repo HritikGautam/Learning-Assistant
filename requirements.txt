@@ -6,7 +6,8 @@ Requests
 scikit_learn
 streamlit
 sentence-transformers
-langchain-huggingface
 groq
 langchain-community
 langchain
+langchain-huggingface>=0.3.1
+langchain-core>=0.3.70,<1.0.0
