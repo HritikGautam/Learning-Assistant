@@ -1,0 +1,21 @@
+# Python Environment & Cache
+venv/
+__pycache__/
+*.pyc
+
+# User Data & Media (Auto-generated)
+audios/
+videos/
+jsons/
+merged_jsons/
+
+# Dynamic App Outputs
+Step5_embeddings.joblib
+response.txt
+structure.txt
+
+# Private/Unused Files
+speech_to_text.py
+prompt.txt
+readme.md
+token.txt
