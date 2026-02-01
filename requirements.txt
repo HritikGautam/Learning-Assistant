@@ -5,3 +5,5 @@ pandas
 Requests
 scikit_learn
 streamlit
+sentence-transformers
+langchain-huggingface
