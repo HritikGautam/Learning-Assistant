@@ -29,7 +29,7 @@ def inference(prompt):
     """
     chat_completion = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
-        model="mixtral-8x7b-32768",
+        model="llama-3.3-70b-versatile",
     )
     # Return dictionary to match your app.py's ['response'] access
     return {"response": chat_completion.choices[0].message.content}
