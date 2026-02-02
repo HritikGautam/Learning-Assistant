@@ -122,17 +122,15 @@ else:
 
                 prompt = f""" Here are video subtitle chunks:
 
-{top_chunks[["start", "end", "text"]].to_json(orient="records")}
+                {top_chunks[["start", "end", "text"]].to_json(orient="records")}
 
----------------------------------
-User Question:
-"{user_question}"
+                ---------------------------------
+                User Question:
+                "{user_question}"
 
-Answer in a human way and guide the user to exact video timestamps.
-"""
+                Answer in a human way and guide the user to exact video timestamps.
+                """
 
-            response = inference(prompt)["response"]
+                response = inference(prompt)["response"]
             st.markdown("### Answer")
             st.write(response)
-# else:
-#     st.warning("Please process a video first.")

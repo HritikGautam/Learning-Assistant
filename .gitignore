@@ -9,13 +9,10 @@ videos/
 jsons/
 merged_jsons/
 
-# Dynamic App Outputs
-Step5_embeddings.joblib
-response.txt
-structure.txt
+# Step5_embeddings.joblib
 
 # Private/Unused Files
 speech_to_text.py
-prompt.txt
 readme.md
 token.txt
+secrets.toml

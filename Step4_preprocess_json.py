@@ -1,23 +1,18 @@
 def run():
-    import requests
+    # import requests
     import os
     import json
-
-    # import numpy as np
+    from langchain_huggingface.embeddings import HuggingFaceEmbeddings
     import pandas as pd
-
-    # from sklearn.metrics.pairwise import cosine_similarity
     import joblib
 
-    def create_embedding(text_list):
-        # https://github.com/ollama/ollama/blob/main/docs/api.md#generate-embeddings
-        r = requests.post(
-            "http://localhost:11434/api/embed",
-            json={"model": "bge-m3", "input": text_list},
-        )
+    # Initialize the model once outside the function
+    model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-        embedding = r.json()["embeddings"]
-        return embedding
+    def create_embedding(text_list):
+        # This runs on Streamlit's CPU—no local server needed!
+        embeddings = model.embed_documents(text_list)
+        return embeddings
 
     jsons = os.listdir("merged_jsons")  # List all the jsons
     my_dicts = []
@@ -26,7 +21,6 @@ def run():
     for json_file in jsons:
         with open(f"merged_jsons/{json_file}") as f:
             content = json.load(f)
-        # print(f"Creating Embeddings for {json_file}")
         embeddings = create_embedding([c["text"] for c in content["chunks"]])
 
         for i, chunk in enumerate(content["chunks"]):

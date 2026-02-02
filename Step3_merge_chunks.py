@@ -44,6 +44,5 @@ def run():
                     )
 
 
-# print("Merging chunks...done!")
 if __name__ == "__main__":
     run()
