@@ -53,6 +53,7 @@ uploaded_file = st.file_uploader(
     "Upload a video file",
     type=["mp4", "mkv", "avi"],
     disabled=st.session_state.processing,
+    on_change=cleanup_workspace,
 )
 
 if uploaded_file:
