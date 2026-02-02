@@ -5,7 +5,7 @@ from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 
 # 1. Initialize the model (Must be the same model used in Step 4/5)
 # This avoids the "localhost" error on Streamlit Cloud
-model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+model = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
 
 # 2. Initialize Groq using Streamlit secrets
 # Ensure you have 'gsk_r5...' set in your Streamlit dashboard secrets

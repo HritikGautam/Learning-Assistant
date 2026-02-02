@@ -7,7 +7,7 @@ def run():
     import joblib
 
     # Initialize the model once outside the function
-    model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    model = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
 
     def create_embedding(text_list):
         # This runs on Streamlit's CPU—no local server needed!
