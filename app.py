@@ -67,8 +67,8 @@ if uploaded_file:
 
     # 2. ALWAYS write the file fresh
     with open(video_path, "wb") as f:
-        f.write(uploaded_file.getbuffer()) # use getbuffer() for better memory handling
-    
+        f.write(uploaded_file.getbuffer())  # use getbuffer() for better memory handling
+
     st.session_state.video_uploaded = True
     st.session_state.video_path = video_path
 
@@ -104,14 +104,14 @@ can_answer = (
     and has_embeddings
 )
 
-# # Load embeddings only if file exists
-# df = None
-# if can_answer:
-#     df = joblib.load("Step5_embeddings.joblib")
-#     # ✅ Check if 'embedding' column exists
-#     if "embedding" not in df.columns:
-#         # st.warning("Embeddings not found. Please process the video first.")
-#         can_answer = False
+# Load embeddings only if file exists
+df = None
+if can_answer:
+    df = joblib.load("Step5_embeddings.joblib")
+    # ✅ Check if 'embedding' column exists
+    if "embedding" not in df.columns:
+        # st.warning("Embeddings not found. Please process the video first.")
+        can_answer = False
 
 if not st.session_state.video_uploaded:
     st.info("Upload and process a video to ask questions.")
