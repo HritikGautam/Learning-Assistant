@@ -14,7 +14,7 @@ from Step6_process_incoming import create_embedding, inference
 # --- 1. CLEANUP UTILITY ---
 def cleanup_workspace():
     """Removes all temporary processing files and folders to avoid data overlap."""
-    folders = ["audios", "jsons", "merged_jsons"]
+    folders = ["audios", "jsons", "merged_jsons", "videos"]
     for folder in folders:
         if os.path.exists(folder):
             shutil.rmtree(folder)
@@ -57,20 +57,18 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file:
+    # 1. Clear everything whenever a NEW file object is detected
+    # We use the file ID or name to detect a change
+    if st.session_state.get("last_uploaded_id") != uploaded_file.name:
+        cleanup_workspace()
+        st.session_state.last_uploaded_id = uploaded_file.name
+
     video_path = os.path.join("videos", uploaded_file.name)
 
-    # If a different video was previously uploaded, remove it
-    if st.session_state.video_path and st.session_state.video_path != video_path:
-        if os.path.exists(st.session_state.video_path):
-            os.remove(st.session_state.video_path)
-
-    # Only write if file doesn't already exist
-    if not os.path.exists(video_path):
-        with open(video_path, "wb") as f:
-            f.write(uploaded_file.read())
-        st.success(f"Video saved as {uploaded_file.name}")
-    else:
-        st.info(f"Video {uploaded_file.name} already exists. Using existing file.")
+    # 2. ALWAYS write the file fresh
+    with open(video_path, "wb") as f:
+        f.write(uploaded_file.getbuffer()) # use getbuffer() for better memory handling
+    
     st.session_state.video_uploaded = True
     st.session_state.video_path = video_path
 

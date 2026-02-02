@@ -15,6 +15,7 @@ def run():
         return embeddings
 
     jsons = os.listdir("merged_jsons")  # List all the jsons
+    print(f"DEBUG: Processing {len(jsons)} files: {jsons}")  # Check your terminal!
     my_dicts = []
     chunk_id = 0
 
