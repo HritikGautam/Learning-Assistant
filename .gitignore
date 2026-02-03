@@ -12,7 +12,6 @@ merged_jsons/
 # Step5_embeddings.joblib
 
 # Private/Unused Files
-speech_to_text.py
 readme.md
 token.txt
-secrets.toml
+.streamlit/secrets.toml
