@@ -1,9 +1,8 @@
-#  Learning Assistant - Video Q&A System
+#  Learning Assistant - Video Q&A System(https://ask-video-ai.streamlit.app/)
 
 An AI-powered **Learning Assistant** that allows users to ask questions about a YouTube course and receive answers with **exact video references and timestamps**.
 
 The system converts video subtitles into embeddings and uses **vector similarity search + LLM reasoning** to generate contextual answers.
-Link:- https://ask-video-ai.streamlit.app/
 ---
 
 #  Features
