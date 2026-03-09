@@ -1,4 +1,4 @@
-# 🎥 Learning Assistant - Video Q&A System
+#  Learning Assistant - Video Q&A System
 
 An AI-powered **Learning Assistant** that allows users to ask questions about a YouTube course and receive answers with **exact video references and timestamps**.
 
@@ -6,7 +6,7 @@ The system converts video subtitles into embeddings and uses **vector similarity
 
 ---
 
-# 🚀 Features
+#  Features
 
 - Ask questions about a complete video course
 - Retrieves the most relevant subtitle segments
@@ -17,7 +17,7 @@ The system converts video subtitles into embeddings and uses **vector similarity
 
 ---
 
-# 🧠 How It Works
+#  How It Works
 
 1. Video subtitles are extracted and processed.
 2. Each subtitle chunk is converted into an **embedding vector**.
@@ -30,7 +30,7 @@ The system converts video subtitles into embeddings and uses **vector similarity
 
 ---
 
-# 🏗️ Project Structure
+#  Project Structure
 
 ```
 Learning-Assistant
@@ -51,7 +51,7 @@ Learning-Assistant
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 **Frontend**
 - Streamlit
@@ -72,7 +72,7 @@ Learning-Assistant
 
 ---
 
-# ⚙️ Installation
+#  Installation
 
 Clone the repository:
 
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🔑 Setup API Key
+#  Setup API Key
 
 Create a **Streamlit secrets file**.
 
@@ -105,7 +105,7 @@ GROQ_API_KEY="your_api_key_here"
 
 ---
 
-# ▶️ Run the Application
+#  Run the Application
 
 ```bash
 streamlit run app.py
@@ -115,7 +115,7 @@ The app will open in your browser.
 
 ---
 
-# 💡 Example Usage
+#  Example Usage
 
 1. Open the Streamlit interface.
 2. Enter a question about the course.
@@ -138,7 +138,7 @@ You can learn about Python Virtual Environment in Video number 12 around timesta
 
 ---
 
-# 📚 Course Used
+#  Course Used
 
 The assistant answers questions about this YouTube course:
 
@@ -147,7 +147,7 @@ https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 - Currently it answers for a few videos, as the course is too big and creating embeddings will take time. 
 - Add support for **multiple courses**
@@ -158,7 +158,7 @@ https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 **Hritik Gautam**
 
